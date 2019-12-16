@@ -2,7 +2,7 @@
   <div class="page-container">
     <v-card>
       <v-tabs centered slider-color="yellow" background-color="white" fixed-tabs color="deep-purple accent-4">
-        <v-tab>INSIDE</v-tab>
+        <v-tab>INSIDE Aom</v-tab>
         <v-tab>OUTSIDE</v-tab>
 
         <v-tab-item v-for="n in 3" :key="n">
