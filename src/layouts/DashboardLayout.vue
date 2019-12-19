@@ -3,7 +3,9 @@
     <v-card flat color="#f0f0f7" style="height:100%">
       <v-toolbar color="#FFEB34" dark flat>
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-        <v-spacer></v-spacer>
+         <v-row justify="center">
+         <img class="mr-3" :src="require('../mask.png')" height="60" justify = />
+        </v-row>
       </v-toolbar>
       <v-navigation-drawer v-model="drawer" absolute temporary>
         <v-list-item>
@@ -13,15 +15,17 @@
           </v-list-item-content>
         </v-list-item>
 
-        <v-divider></v-divider>
-
+        <v-divider>
+        </v-divider>
+          
         <v-list dense nav>
           <v-list-item v-for="item in items" :key="item.title" link @click="linkTo(item.link)">
             <v-list-item-icon>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-item-icon>
-
+                
             <v-list-item-content>
+              
               <v-list-item-title>{{ item.title }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -37,15 +41,16 @@
 </template>
 
 <script>
+import Firebase from "firebase";
 export default {
   data() {
     return {
       activeLink: '/',
       drawer: null,
       items: [
-        { title: 'Air Quality', icon: 'mdi-view-dashboard' , link:'/'},
-        { title: 'Graph', icon: 'mdi-image', link:'/graph' },
-        { title: 'Prevent', icon: 'mdi-help-box' , link:'/prevent'}
+        { title: 'Air Quality', icon: 'mdi-weather-hail' , link:'/'},
+        { title: 'Graph', icon: 'mdi-chart-line', link:'/graph' },
+        { title: 'Prevent', icon: 'mdi-hospital' , link:'/prevent'}
       ],
       right: null
     }
@@ -86,7 +91,7 @@ export default {
 }
 
 .main-body {
-  padding: 20px;
+  /*padding: 20px;*/
   background-color: #f0f0f7;
 }
 
