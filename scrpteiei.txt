@@ -1,0 +1,4 @@
+for (var i in data) {
+        this.humidity.push(data[i].humidity)
+      }
+      console.log(this.humidity)
